@@ -15,13 +15,15 @@ console.log('Mongoose Connected Successfully');
 connection.on('error', (err) => {
 console.log('Mongoose default connection error: ' + err);
 });
-
+app.use(express.static(__dirname + '/client/build/'));
 app.use(bodyParser.json());
 app.get('/', (req,res) => {
-res.send('Hello world!')
+res.send( __dirname + '/client/build/index.html')
 })
 
-const PORT = process.env.PORT || 3000;
+
+
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
 console.log("Magic happening on port " + PORT);
 })
