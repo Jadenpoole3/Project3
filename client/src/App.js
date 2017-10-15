@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import HomePage from './components/home/HomePage'
-import FieldPage from './components/field/FieldPage'
 import LoginPage from './components/login/LoginPage'
+import FieldPage from './components/field/FieldPage'
 
 class App extends Component {
   render() {
