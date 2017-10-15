@@ -25,7 +25,7 @@ const trey = new Field({
 const april = new User ({
     userName: 'april_april',
     password: 'apriliscool',
-    fields: [jaden, kyiana, trey]
+    fields: [jaden, kyiana, trey, {}]
 })
 
 User.remove({})
