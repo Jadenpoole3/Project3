@@ -6,9 +6,15 @@ const FieldList = (props) => {
     return (
         <FieldListStyles>
             {props.fields.map((field) => {
+
+                
                 return (
+                    
+                  
                     <Field key={field._id} title={field.title} description={field.description} />
                 )
+
+          
             })}
 
         </FieldListStyles>

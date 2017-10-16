@@ -1,37 +1,57 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 
 class FieldPage extends Component {
     state = {
         user: {
             userName: '',
-            password: '',
+            bio: '',
             fields: []
-        }
+        },
+        redirectToUser: false
     }
 
+    
+
     async componentWillMount () {
-        const { userId} = this.props.match.params
-        const res = await axios.get(`/api/users/${userId}`)
-        this.setState({user: res.data})
+        this.getUser() 
+    }
+
+    getUser = async () => {
+try{
+    const {userId} = this.props.match.params
+    const response = await axios.get(`/api/users/${userId}`)
+    this.setState({user: response.data})
+} catch (err) {
+    console.log(err)
+}
+    }
+
+    handleDelete = async () => {
+        const userId = this.props.match.params.userId
+        const response = await axios.delete(`/api/users/${userId}`)
+        this.setState({redirectToUser: true})
+        // this.props.handleDelete(this.state.user._id)
     }
     render() {
+        if(this.state.redirectToUser) {
+            return <Redirect to ={"/login"} />
+        }
+        
         return (
             <div>
                 <h1>Hello User</h1>
 
-                <h3> UserName </h3>
+                <h3> {this.state.user.userName}</h3>
 
                 <h3> Profile</h3>
-                <p>
-                Lorem ipsum dolor sit amet, maiores ornare ac fermentum, 
-                imperdiet ut vivamus a, nam lectus at nunc. 
-                Quam euismod sem, semper ust erat dui tempor, fusce tortor auctor vestibulum.
-                 Venenatis praesent risus orci, ante nam volutpat erat. Cursus non mollis interdum maecenas, 
-                 consequat imperdiet penatibus enim, tristique luctus tellus eos accumsan, ridiculus erat laoreet nunc.
-                </p>
+                  <p> bio:
+                      
+                  </p>
+                
 
-                <button> Delete</button>
+                <button onClick={this.handleDelete}> Delete</button>
                 <button>Edit</button>
             </div>
         );

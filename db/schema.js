@@ -11,7 +11,7 @@ const fieldSchema = mongoose.Schema({
 
 const userSchema = mongoose.Schema({
     userName: String,
-    password: String, 
+    bio: String, 
     fields: [fieldSchema]
 })
 

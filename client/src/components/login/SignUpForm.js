@@ -5,7 +5,7 @@ class SignUpForm extends Component {
     state = {
         newUser: {
             userName: '',
-            password: ''
+            bio: ''
         }
     }
 
@@ -34,11 +34,14 @@ class SignUpForm extends Component {
                         name="userName" type="text"  value={this.state.newUser.userName}/>
                     </div>
                     <div>
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="bio">Bio</label>
                         <input 
                         onChange={this.handleChange}
-                        value={this.state.newUser.password}
-                        name="password" type="text" />
+                        value={this.state.newUser.bio}
+                        name="bio" type="text" 
+                        required
+                        />
+
                     </div>
                     <button> Sign Up</button>
                 </form>
