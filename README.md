@@ -18,6 +18,7 @@ https://ancient-brushlands-92129.herokuapp.com/
 
 # Erd 
 
+![./images/erd.jpg](,/images/erd.jpg)
 
 
 # Trello 

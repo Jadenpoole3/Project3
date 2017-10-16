@@ -5,6 +5,12 @@ class HomePage extends Component {
         return (
             <div>
                <h1>Hello HomePage</h1> 
+
+               <h3>Welcome to Personalize</h3>
+
+               
+
+
             </div>
         );
     }

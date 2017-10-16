@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 class SignUpForm extends Component {
     state = {
@@ -14,7 +15,7 @@ class SignUpForm extends Component {
         updateUser[attribute] = event.target.value
         this.setState({newUser: updateUser})
     }
-    handleChange = async (event) => {
+    handleSubmit = async (event) => {
         event.preventDefault()
         const res = await axios.post('/api/users', {
             'user': this.state.newUser

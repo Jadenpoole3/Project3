@@ -17,12 +17,19 @@ const Field = (props) => {
     const updateField = () => {
         props.updateField(props._id)
     }
+
+    const Field = (props) => {
+        return (
+            <FieldStyles>
+       <input name="title" value={props.title} />
+      <textarea name="description" value={props.description}/>
+      <button>Delete Idea</button>
+
+            </FieldStyles>
+        )
+    }
     
 }
- return (
-     <FieldStyles>
 
-     </FieldStyles>
- )
 
 export default Field

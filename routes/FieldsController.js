@@ -18,6 +18,18 @@ router.post('/', async (req,res) => {
     res.json(saved)
 })
 
+router.get('/:id', async (req,res) => {
+    try {
+        const user = await Field.findById(req.params.userId)
+        req.json(user)
+    }
+    catch(err){
+res.send(err)
+    }
+
+    
+})
+
 router.patch('/:id', async (req, res) => {
     // get the values 
 
@@ -50,5 +62,7 @@ router.delete('/:id', async(req,res) => {
 
     res.json(saved)
 })
+
+
 
 module.exports = router
