@@ -21,8 +21,11 @@ router.get('/:id', async (req,res) => {
     } catch (err) {
         res.send(err)
     }
+    
 })
-//Show
+
+
+//Create
 router.post('/', async (req, res) => {
     try {
         const newUser = new User (req.body.user)
