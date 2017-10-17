@@ -2,26 +2,27 @@ const express = require ('express')
 const router = express.Router({mergeParams: true})
 const { Field } = require('../db/schema')
 
+//create route
 router.post('/', async (req,res) => {
     //making a empty model
     const newField = new Field()
 
     //find the user
-    const user = await User.findById(req.params.userId)
+    const field = await Field.findById(req.params.userId)
 
     //push the new user to the user list of fields
-    user.fields.push(newField)
+    fields.push(newField)
 
     //saving the user to the db 
     const saved = await user.save()
 
     res.json(saved)
 })
-
+//show route
 router.get('/:id', async (req,res) => {
     try {
-        const user = await Field.findById(req.params.userId)
-        req.json(user)
+        const field = await Field.findById(req.params.userId)
+        req.json(field)
     }
     catch(err){
 res.send(err)
@@ -29,14 +30,14 @@ res.send(err)
 
     
 })
-
+//update route 
 router.patch('/:id', async (req, res) => {
     // get the values 
 
     const updatedField = req.body.fields
 
     //find the user 
-    const user = await User.findById(req.params.userId)
+    const field = await Field.findById(req.params.userId)
 
     //get the fields
     const field = user.fields.id(req.params.id)
@@ -50,18 +51,7 @@ router.patch('/:id', async (req, res) => {
     res.json(saved)
 })
 
-router.delete('/:id', async(req,res) => {
-    //find the user 
-    const user = await User.findById(req.params.userId)
 
-    //find the field and removing it 
-    users.fields.id(req.params.id).remove()
-
-    //saving the update user 
-    const saved = await user.save()
-
-    res.json(saved)
-})
 
 
 

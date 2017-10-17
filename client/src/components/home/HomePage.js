@@ -13,17 +13,7 @@ class HomePage extends Component {
                 <div>
                     <h1>Get Smart </h1>
 
-                    <div>
-                        <h3>Field of Interest</h3>
-                        <Link to="/jobfield/medical">Medical</Link>
-
-                        <br />
-                        <Link to="/jobfield/web">Web Development</Link>
-
-                        <br/>
-                        <Link to="/jobfield/criminal">Criminal Justice</Link>
-
-                    </div>
+                    
                     
 
                     <div>
