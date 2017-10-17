@@ -4,11 +4,12 @@ import { Redirect} from 'react-router-dom'
 
 class UserPage extends Component {
     state = {
-        field: {
-            title: '',
-            information: '',
-            createdAt: '',
+        user: {
+            userName: '',
+            bio: '',
+            fieldOfInterest: '',
         },
+
 
         redirectToField: false
 
@@ -17,7 +18,7 @@ class UserPage extends Component {
 
 
     async componentWillMount() {
-        this.getField()
+        this.getUser()
         
     }
 
@@ -34,14 +35,14 @@ class UserPage extends Component {
 //             console.log(err)
 //         }
 // }
-getField = async () => {
+getUser = async () => {
     try {
         const {
-                fieldId
+                userId
             } = this.props.match.params
-        const response = await axios.get(`/api/users/${fieldId}`)
+        const response = await axios.get(`/api/users/${userId}`)
         this.setState({
-            field: response.data
+            user: response.data
         })
     } catch (err) {
         console.log(err)
@@ -50,8 +51,8 @@ getField = async () => {
 
 
 handleDelete = async () => {
-    const fieldId = this.props.match.params.fieldId
-    const response = await axios.delete(`/api/users/${fieldId}`)
+    const userId = this.props.match.params.userId
+    const response = await axios.delete(`/api/users/${userId}`)
     this.setState({
         redirectToField: true
     })
@@ -96,15 +97,15 @@ render() {
 
     return (<div>
         <h1> Users Profile </h1>
-        <h3> {this.state.field.userName} </h3>
+        <h3> {this.state.user.userName} </h3>
         <h3> Bio </h3>
         <textarea onBlur={this.updateBio}
             onChange={this.handleChange}
-            name="bio" value={this.state.field.bio}
+            name="bio" value={this.state.user.bio}
         />
         <h3> Field of Interest </h3>
         <h3>
-            {this.state.field.fieldOfInterest} </h3>
+            {this.state.user.fieldOfInterest} </h3>
         <br />
         <button onClick={this.handleDelete}>Delete </button>
     </div>
