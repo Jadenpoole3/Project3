@@ -67,23 +67,20 @@ handleChange = async (event) => {
     //getting the input 
     const attribute = event.target.name
 
-    const clonedField = {
-        ...this.state.field
-    }
+    const clonedUser = {...this.state.user }
+    clonedUser[attribute] = event.target.value
 
-    this.setState({
-        field: clonedField
-    })
+    this.setState({ user: clonedUser})
 }
 
 updateBio = async () => {
-    const { fieldId} = this.props.match.params
+    const { userId} = this.props.match.params
 
-    const res = await axios.patch(`/api/fields/${fieldId}`, {
-        field: this.state.field
+    const res = await axios.patch(`/api/users/${userId}`, {
+        user: this.state.user
     })
     this.setState({
-        field: res.data
+        user: res.data
     })
 
 
