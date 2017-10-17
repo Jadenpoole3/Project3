@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 //import the components 
 import HomePage from './components/home/HomePage.js'
 import LoginPage from './components/login/LoginPage.js'
-import FieldPage from './components/field/FieldPage.js'
+import UserPage from './components/field/UserPage.js'
 import Field from './components/field/Field.js'
 import Medical from './components/jobfield/Medical.js'
 import Web from './components/jobfield/Web.js'
@@ -33,7 +33,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/login" component={LoginPage} />
-            <Route exact path="/field/:fieldId" component={FieldPage} />
+            <Route exact path="/field/:fieldId" component={UserPage} />
             <Route exact path="/field" component={Field} />
             <Route exact path="/jobfield/medical" component={Medical} />
             <Route exact path="/jobfield/web" component={Web} />
