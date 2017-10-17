@@ -11,6 +11,7 @@ import FieldPage from './components/field/FieldPage.js'
 import Field from './components/field/Field.js'
 import Medical from './components/jobfield/Medical.js'
 import Web from './components/jobfield/Web.js'
+import Criminal from './components/jobfield/Criminal'
 import MedicalJob from './components/jobs/MedicalJob'
 
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
             <Route exact path="/field" component={Field} />
             <Route exact path="/jobfield/medical" component={Medical} />
             <Route exact path="/jobfield/web" component={Web} />
+            <Route exact path="/jobfield/criminal" component={Criminal} />
             <Route exact path="/jobs/medical/MedicalJob" component={MedicalJob} />
           </Switch>
         </div>

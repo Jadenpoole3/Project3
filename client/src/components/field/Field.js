@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const FieldStyles = styled.div`
-img 
+img{
+    height: 200px;
+    width: 40%;
+}
 `
 
 
@@ -23,6 +26,7 @@ class Field extends Component {
                 <img src="https://www.eduonix.com/aDmiN_050716/public/uploads/headerimages/20170301155447.jpg" alt="web"/>
 
                 <h3>Criminal Justice</h3>
+                <img src="https://www.criminaljusticedegreeschools.com/wp-content/themes/p8-theme/img/criminal-justice-schools-montage.jpg" alt="criminal"/>
 
 
 

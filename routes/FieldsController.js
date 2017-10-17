@@ -1,6 +1,6 @@
 const express = require ('express')
 const router = express.Router({mergeParams: true})
-const { User, Field} = require('../db/schema')
+const { Field } = require('../db/schema')
 
 router.post('/', async (req,res) => {
     //making a empty model

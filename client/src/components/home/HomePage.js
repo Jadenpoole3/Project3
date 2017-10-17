@@ -20,8 +20,11 @@ class HomePage extends Component {
                         <br />
                         <Link to="/jobfield/web">Web Development</Link>
 
+                        <br/>
+                        <Link to="/jobfield/criminal">Criminal Justice</Link>
+
                     </div>
-                    <h3> User Fields</h3>
+                    
 
                     <div>
                         <LoginPage />
