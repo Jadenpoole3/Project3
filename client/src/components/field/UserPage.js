@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import { Redirect} from 'react-router-dom'
 
-class FieldPage extends Component {
+class UserPage extends Component {
     state = {
         field: {
             title: '',
@@ -114,4 +114,4 @@ render() {
 
 }
 
-export default FieldPage;
+export default UserPage;
