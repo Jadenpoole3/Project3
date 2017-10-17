@@ -39,7 +39,7 @@ getField = async () => {
         const {
                 fieldId
             } = this.props.match.params
-        const response = await axios.get(`/api/fields/${fieldId}`)
+        const response = await axios.get(`/api/users/${fieldId}`)
         this.setState({
             field: response.data
         })
@@ -96,7 +96,7 @@ render() {
 
     return (<div>
         <h1> Users Profile </h1>
-        <h3> {this.state.field.fieldName} </h3>
+        <h3> {this.state.field.userName} </h3>
         <h3> Bio </h3>
         <textarea onBlur={this.updateBio}
             onChange={this.handleChange}
@@ -104,7 +104,7 @@ render() {
         />
         <h3> Field of Interest </h3>
         <h3>
-            {this.state.field.fields} </h3>
+            {this.state.field.fieldOfInterest} </h3>
         <br />
         <button onClick={this.handleDelete}>Delete </button>
     </div>

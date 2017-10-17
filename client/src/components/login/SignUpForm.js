@@ -50,6 +50,13 @@ class SignUpForm extends Component {
                         onChange={this.handleChange}
                         name="img" type="text"  value={this.state.newUser.img}/>
                     </div>
+
+                    <div>
+                        <label htmlFor="fieldOfInterest">Field Of Interest</label>
+                        <input  
+                        onChange={this.handleChange}
+                        name="fieldOfInterest" type="text"  value={this.state.newUser.fieldOfInterest}/>
+                    </div>
                     <button> Sign Up</button>
                 </form>
             </div>

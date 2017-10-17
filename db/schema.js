@@ -12,6 +12,10 @@ description: {
 
 img: {
     type: String,
+},
+
+fieldOfInterest: {
+    type: String,
 }
 
 
@@ -35,6 +39,7 @@ const userSchema = mongoose.Schema({
     userName: String,
     bio: String, 
     img: String,
+    fieldOfInterest: String,
 
     
 })
