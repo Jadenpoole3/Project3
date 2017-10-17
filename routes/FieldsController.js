@@ -37,10 +37,10 @@ router.patch('/:id', async (req, res) => {
     const updatedField = req.body.fields
 
     //find the user 
-    const field = await Field.findById(req.params.userId)
+    const field = await Field.findById(req.params.fieldId)
 
     //get the fields
-    const field = user.fields.id(req.params.id)
+    // const field = field.id(req.params.id)
 
     field.title = updatedField.description
 
@@ -51,6 +51,17 @@ router.patch('/:id', async (req, res) => {
     res.json(saved)
 })
 
+// Delete route 
+router.delete('/:id', async (req, res) => {
+    try {
+        const fieldId = req.params.id;
+        const deleted = await User.findByIdAndRemove(fieldId)
+        res.json(deleted)
+    }
+    catch (err) {
+        res.send(err)
+    }
+})
 
 
 

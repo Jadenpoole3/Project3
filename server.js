@@ -3,6 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const UsersController = require('./routes/UsersController')
+const FieldsController = require('./routes/FieldsController')
+// const JobsController = require('./routes/JobsController')
 mongoose.Promise = global.Promise;
 
 
@@ -28,7 +30,8 @@ app.use(express.static(__dirname + '/client/build/'));
 app.use(bodyParser.json());
 
 app.use('/api/users', UsersController)
-
+app.use('/api/fields', FieldsController)
+// app.use('/api/jobs', JobsController)
 
 
 app.get('/', (req,res) => {

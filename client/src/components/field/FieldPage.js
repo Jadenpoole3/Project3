@@ -51,7 +51,7 @@ getField = async () => {
 
 handleDelete = async () => {
     const fieldId = this.props.match.params.fieldId
-    const response = await axios.delete(`/api/fields/${fieldId}`)
+    const response = await axios.delete(`/api/users/${fieldId}`)
     this.setState({
         redirectToField: true
     })
