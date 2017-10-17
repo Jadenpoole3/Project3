@@ -22,10 +22,14 @@ class JobPage extends Component {
   
     render() {
         if(this.state.user.userName) {
-            return <Redirect to ={"/login"}
+            return <Redirect to ={"/field"} />
         }
         return (
             <div>
+
+                <h3>{this.state.user.userName}</h3>
+
+                
                 
             </div>
         );

@@ -1,35 +1,37 @@
 import React, { Component } from 'react';
-
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import SignUpForm from '../login/SignUpForm'
+import { Redirect } from 'react-router-dom'
+import LoginPage from '../login/LoginPage'
+import Medical from '../jobfield/Medical'
 
 class HomePage extends Component {
     render() {
         return (
-
-            <Router>
-
             <div>
-               <h1>Welcome </h1> 
 
-    <div>
-    <h3>Field of Interest</h3>
-               <a href="./components/jobfield/medical">Medical</a> 
-               <br/>
-               <a href="./components/jobfield/web">Web Development</a> 
-               
+                <div>
+                    <h1>Get Smart </h1>
 
-    </div>
-               <h3> User Fields</h3>
+                    <div>
+                        <h3>Field of Interest</h3>
+                        <Link to="/jobfield/medical">Medical</Link>
 
-               <button onClick="/login">Sign Up</button>
-            
+                        <br />
+                        <Link to="/jobfield/web">Web Development</Link>
 
+                    </div>
+                    <h3> User Fields</h3>
 
+                    <div>
+                        <LoginPage />
 
+                    </div>
+                    <button onClick="../login/LoginPage.js">Sign Up</button>
 
+                </div>
             </div>
-            </Router>
-           
+
         );
     }
 }

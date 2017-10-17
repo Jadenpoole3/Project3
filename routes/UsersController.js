@@ -37,6 +37,26 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.patch('/:id', async (req, res) => {
+    // get the values 
+
+    const updatedField = req.body.fields
+
+    //find the user 
+    const user = await User.findById(req.params.userId)
+
+    //get the fields
+    const field = user.fields.id(req.params.id)
+
+    field.title = updatedField.description
+
+    //saving the user 
+
+    const saved = await user.save()
+
+    res.json(saved)
+})
+
 //Delete Route
 router.delete('/:id', async (req, res) => {
     try {

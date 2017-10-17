@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
+import React, {
+    Component
+} from 'react';
 import axios from 'axios'
-import {Redirect} from 'react-router-dom'
+import {
+    Redirect
+} from 'react-router-dom'
 
 class FieldPage extends Component {
     state = {
@@ -10,50 +14,116 @@ class FieldPage extends Component {
             fields: []
         },
         redirectToUser: false
+
     }
 
-    
 
-    async componentWillMount () {
-        this.getUser() 
+
+    async componentWillMount() {
+        this.getUser()
+        // this.getField()
     }
 
     getUser = async () => {
-try{
-    const {userId} = this.props.match.params
-    const response = await axios.get(`/api/users/${userId}`)
-    this.setState({user: response.data})
-} catch (err) {
-    console.log(err)
-}
+        try {
+            const {
+                userId
+            } = this.props.match.params
+            const response = await axios.get(`/api/users/${userId}`)
+            this.setState({
+                user: response.data
+            })
+        } catch (err) {
+            console.log(err)
+        }
     }
+    getField = async () => {
+        try {
+            const {
+                fieldId
+            } = this.props.match.params
+            const response = await axios.get(`/api/fields/${fieldId}`)
+            this.setState({
+                field: response.data
+            })
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
 
     handleDelete = async () => {
         const userId = this.props.match.params.userId
         const response = await axios.delete(`/api/users/${userId}`)
-        this.setState({redirectToUser: true})
+        this.setState({
+            redirectToUser: true
+        })
         // this.props.handleDelete(this.state.user._id)
     }
-    render() {
-        if(this.state.redirectToUser) {
-            return <Redirect to ={"/login"} />
+
+
+
+    handleChange = async (event) => {
+        console.log(event)
+
+        //getting the input 
+        const attribute = event.target.name
+
+        const clonedUser = {
+            ...this.state.user
         }
-        
-        return (
-            <div>
-                <h1>Hello User</h1>
 
-                <h3> {this.state.user.userName}</h3>
+        this.setState({
+            user: clonedUser
+        })
+    }
 
-                <h3> Profile</h3>
-                  <p> bio:
-                      
-                  </p>
-                
+    updateBio = async () => {
+        const {
+            userId
+        } = this.props.match.params
 
-                <button onClick={this.handleDelete}> Delete</button>
-                <button>Edit</button>
-            </div>
+        const res = await axios.patch(`/api/users/${userId}`, {
+            user: this.state.user
+        })
+        this.setState({
+            user: res.data
+        })
+
+
+
+    }
+    render() {
+        if (this.state.redirectToUser) {
+
+            return <Redirect to={
+                "/login"
+            }
+            />
+        }
+
+        return (<div>
+            <h1> User Profile </h1>
+            <h3> {this.state.user.userName} </h3>
+            <h3> Bio </h3>
+            <textarea onBlur={
+                                this.updateBio
+                            }
+                            onChange={
+                                this.handleChange
+                            }
+                            name="bio"
+                            value={
+                                this.state.user.bio
+                            }
+                        />
+                        <h3> Field of Interest </h3>
+                        <h3> {
+                                    this.state.user.fields
+                                } </h3>
+                                <br/>
+            <button onClick={this.handleDelete}>Delete </button>
+                                    </div>
         );
     }
 }

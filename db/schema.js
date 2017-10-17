@@ -8,7 +8,14 @@ title: {
 description: {
     type: String,
     default: 'New Description'
+},
+
+img: {
+    type: String,
 }
+
+
+
 
 })
 
@@ -24,8 +31,11 @@ const fieldSchema = mongoose.Schema({
 })
 
 const userSchema = mongoose.Schema({
+    
     userName: String,
     bio: String, 
+    img: String,
+
     
 })
 

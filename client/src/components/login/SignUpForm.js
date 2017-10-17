@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+
 class SignUpForm extends Component {
     state = {
         newUser: {
             userName: '',
-            bio: ''
+            bio: '',
+            img: ''
         }
     }
 
@@ -17,11 +19,9 @@ class SignUpForm extends Component {
     }
     handleSubmit = async (event) => {
         event.preventDefault()
-        const res = await axios.post('/api/users', {
-            'user': this.state.newUser
-        })
-        console.log(res.data)
+        this.props.updateUser(this.state.newUser)
     }
+       
     render () {
         return (
             <div>
@@ -42,6 +42,13 @@ class SignUpForm extends Component {
                         required
                         />
 
+                    </div>
+
+                    <div>
+                        <label htmlFor="img">Image</label>
+                        <input  
+                        onChange={this.handleChange}
+                        name="img" type="text"  value={this.state.newUser.img}/>
                     </div>
                     <button> Sign Up</button>
                 </form>
