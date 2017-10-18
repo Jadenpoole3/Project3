@@ -15,10 +15,12 @@ import Criminal from './components/jobfield/Criminal'
 import MedicalJob from './components/jobs/MedicalJob'
 import WebJobs from './components/jobs/WebJobs'
 import CriminalJobs from './components/jobs/CriminalJobs'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
   render() {
     return (
+      <MuiThemeProvider>
       <Router>
         <div>
           <div>
@@ -46,6 +48,8 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
+      </MuiThemeProvider>
+      
     )
   }
 }
