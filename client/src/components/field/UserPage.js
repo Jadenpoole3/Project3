@@ -7,6 +7,7 @@ class UserPage extends Component {
         user: {
             userName: '',
             bio: '',
+            img: '',
             fieldOfInterest: '',
         },
 
@@ -101,8 +102,7 @@ render() {
             name="bio" value={this.state.user.bio}
         />
         <h3> Field of Interest </h3>
-        <h3>
-            {this.state.user.fieldOfInterest} </h3>
+        <h3>{this.state.user.fieldOfInterest} </h3>
         <br />
         <button onClick={this.handleDelete}>Delete </button>
     </div>

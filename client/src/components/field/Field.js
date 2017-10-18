@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 const FieldStyles = styled.div`
 img{
     height: 200px;
-    width: 40%;
+    width: 20%;
 }
 `
 
