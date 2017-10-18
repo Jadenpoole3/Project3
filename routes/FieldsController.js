@@ -40,6 +40,7 @@ router.patch('/:id', async (req, res) => {
     const field = await Field.findById(req.params.fieldId)
 
     //get the fields
+    
     // const field = field.id(req.params.id)
 
     field.title = updatedField.description

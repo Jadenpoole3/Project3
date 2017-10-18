@@ -12,7 +12,7 @@ class UserPage extends Component {
         },
 
 
-        redirectToField: false
+        redirectToUser: false
 
     }
 
@@ -77,6 +77,7 @@ handleChange = async (event) => {
 updateBio = async () => {
     const { userId} = this.props.match.params
 
+    console.log(userId + ' is being sent')
     const res = await axios.patch(`/api/users/${userId}`, {
         user: this.state.user
     })

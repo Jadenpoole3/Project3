@@ -45,7 +45,7 @@ class Web extends Component {
                 <p>This bootcamp aims to demystify UX by giving a practical and simple introduction to what UX is, while also explaining some of its core concepts. 
                     This is a field that affects all areas of business — prepare to dip your toes into an ocean of new concepts and ideas that will enlighten your perspective on user experience.</p>
 
-
+                    <Link to="/jobs/WebJobs">  Jobs </Link>
             </div>
             </WebStyles>
             

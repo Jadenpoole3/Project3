@@ -30,7 +30,7 @@ class JobPage extends Component {
                 <h3>{this.state.user.userName}</h3>
 
                 
-                
+                <h1> Jobs</h1>
             </div>
         );
     }

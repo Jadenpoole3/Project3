@@ -12,7 +12,7 @@ const app = express();
 
 
 
-mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/idea-board
+mongoose.connect(process.env.MONGODB_URI, {useMongoClient: true}); //mongodb://localhost/idea-board
 const connection = mongoose.connection;
 
 

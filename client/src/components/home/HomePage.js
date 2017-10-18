@@ -27,7 +27,7 @@ class HomePage extends Component {
                         <LoginPage />
 
                     </div>
-                    <button onClick="../login/LoginPage.js">Sign Up</button>
+                    <button onClick="./login/LoginPage.js">Sign Up</button>
 
                 </div>
                 </HomePageStyles>

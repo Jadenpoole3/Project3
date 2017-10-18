@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import styled from 'styled-components'
+import MedicalJob from '../jobs/MedicalJob.js'
 
 const MedicalStyles = styled.div`
 img{
@@ -32,7 +33,7 @@ class Medical extends Component {
                 The first two years cover core requirements and the latter two years focus primarily on nursing. This degree is a good start for aspiring nurse practitioners who will eventually decide on a specialty.
                 </p>
 
-            <Link to="./jobs/MedicalJob.js"/>
+            <Link to="/jobs/MedicalJob"> Medical Jobs </Link>
 
 
                 
