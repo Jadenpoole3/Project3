@@ -21,7 +21,7 @@ class MedicalJob extends Component {
                 
                 <h3> Nurse Anesthetist </h3>
                 <img src="http://nursinglink.monster.com/nfs/nursinglink/attachment_images/0015/8190/anesthetistnurse_crop380w.jpg?1284503282" alt="nurse anthe"/>
-                <p> Salary: 100K - 150K</p>
+                <p> Salary: $100K - $150K (changes may vary depending on location)</p>
                 <p> School Years: Two - Six </p>
                 <p>Demand: High</p>
 
@@ -29,7 +29,7 @@ class MedicalJob extends Component {
 
                 <h3> Surgical Technical </h3>
                 <img src="https://www.allalliedhealthschools.com/wp-content/uploads/2016/09/hero-medical-technician-surgical-assistant-vs-technician.jpg" alt="nurse surge"/>
-                <p> Salary: 50K - 90K</p>
+                <p> Salary: $50K - $90K (changes may vary depending on location)</p>
                 <p> School Years: Two - Four</p>
                 Demand: Skyrocketing
                 </MedicalJobStyles>

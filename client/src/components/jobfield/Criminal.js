@@ -30,6 +30,7 @@ class Criminal extends Component {
                 <p>Police officers answer calls for service, investigate minor crimes, provide protection and law enforcement services and investigate traffic crashes. 
                     They also patrol their communities and generally work to keep neighborhoods safe and prevent crime.  </p>
                 
+                    <Link to="/jobs/CriminalJobs"> Jobs </Link>
                 
                 </CriminalStyles>
                

@@ -14,6 +14,7 @@ import Web from './components/jobfield/Web.js'
 import Criminal from './components/jobfield/Criminal'
 import MedicalJob from './components/jobs/MedicalJob'
 import WebJobs from './components/jobs/WebJobs'
+import CriminalJobs from './components/jobs/CriminalJobs'
 
 class App extends Component {
   render() {
@@ -41,6 +42,7 @@ class App extends Component {
             <Route exact path="/jobfield/criminal" component={Criminal} />
             <Route exact path="/jobs/MedicalJob" component={MedicalJob} />
             <Route exact path="/jobs/WebJobs" component={WebJobs} />
+            <Route exact path="/jobs/CriminalJobs" component={CriminalJobs} />
           </Switch>
         </div>
       </Router>
