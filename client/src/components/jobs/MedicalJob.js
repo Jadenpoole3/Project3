@@ -15,12 +15,6 @@ card: {
 }
 
 }
-
-
-
-
-
-
 class MedicalJob extends Component {
     render() {
         
@@ -75,14 +69,6 @@ class MedicalJob extends Component {
       <FlatButton label="Action2" />
     </CardActions> */}
   </Card>
-
-
-
-              
-
-
-
-
 
 
 {/* 
