@@ -8,6 +8,7 @@ img{
     height: 200px;
     width: 20%;
 }
+text-align: center,
 `
 
 class Medical extends Component {

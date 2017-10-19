@@ -21,8 +21,9 @@ class HomePage extends Component {
                 <HomePageStyles>
                 <div>
                     <h1>Get Smart </h1>
-                    <img src="https://www.gla.ac.uk/media/media_247714_en-353x353.jpg" alt="when"/>
+                    <iframe src="https://giphy.com/embed/3i4xTtJQIJk0o" width="480" height="346" frameBorder="0"  allowFullScreen></iframe>
 
+            
                     <div>
                         <LoginPage />
 

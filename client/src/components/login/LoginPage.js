@@ -11,7 +11,7 @@ background-color: #fff;
   width: 95vw;
   max-width: 600px;
   margin: 20px auto;
-  background: Wheat;
+  background: LightCyan;
   inline: block
 
 `
