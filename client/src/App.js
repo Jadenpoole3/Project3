@@ -18,9 +18,10 @@ import CriminalJobs from './components/jobs/CriminalJobs'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const WebJobsStyles = styled.div`
-    background: tan;
-    height: 100%;
-    width: 100%;
+    background: LightCyan;
+   
+
+
 `
 class App extends Component {
   render() {
@@ -28,6 +29,9 @@ class App extends Component {
       <MuiThemeProvider>
         <Router>
           <WebJobsStyles>
+            <div>
+
+            
             <div>
               <div>
                 <Link to='/'>Home</Link>
@@ -51,7 +55,9 @@ class App extends Component {
               <Route exact path="/jobs/WebJobs" component={WebJobs} />
               <Route exact path="/jobs/CriminalJobs" component={CriminalJobs} />
             </Switch>
+            </div>
           </WebJobsStyles>
+          
         </Router>
       </MuiThemeProvider>
 

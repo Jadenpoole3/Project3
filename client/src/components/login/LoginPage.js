@@ -3,6 +3,18 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import SignUpForm from './SignUpForm'
 import {Redirect} from 'react-router-dom'
+import styled from 'styled-components';
+
+const LoginPageStyles = styled.div`
+background-color: #fff;
+  border-radius: 3px;
+  width: 95vw;
+  max-width: 600px;
+  margin: 20px auto;
+  background: Wheat;
+  inline: block
+
+`
 
 class LoginPage extends Component {
     state = {
@@ -42,6 +54,7 @@ class LoginPage extends Component {
     render() {
         return (
             <div>
+                <LoginPageStyles>
                 <h1>  Login</h1>
                 <h3> Please Select an Existing User</h3>
                 {this.state.users.map(user => {
@@ -51,6 +64,8 @@ class LoginPage extends Component {
 
                 
                 {this.props.match.path === "/login" ? <SignUpForm updateUser={this.updateUser}/> : null}
+                </LoginPageStyles>
+                
             </div>
            
         );
